@@ -1,0 +1,112 @@
+{
+  "_about": "A made-up example showing the exact structure of skill_run/config.json, which the skill writes at the end of intake. The books and files are fictional. Relative paths are resolved against the project folder (the folder that contains skill_run/). Keys that start with _ are notes and are ignored.",
+  "research_purpose": "investigating the cognitive demands of practice questions and investigations in two Grade 6 mathematics textbooks",
+  "subject": "Mathematics",
+  "grade_level": "Grade 6",
+  "curriculum": "",
+  "output_dir": "",
+  "item_types": [
+    {
+      "name": "Question",
+      "letter": "Q",
+      "plural": "Questions",
+      "definition": "any main numbered item in the section; sub-parts belong to their parent item"
+    },
+    {
+      "name": "Investigation",
+      "letter": "I",
+      "plural": "Investigations",
+      "definition": "any separately listed task in the section, with all its steps"
+    }
+  ],
+  "group_instructions": "include",
+  "_group_instructions_options": "include | leave_out",
+  "books": [
+    {
+      "name": "Maths Explorer",
+      "code": "MEX",
+      "pdf": "Maths_Explorer_Ch1-10.pdf",
+      "sections": {
+        "Question": [
+          "Practice Set"
+        ],
+        "Investigation": [
+          "Let's Investigate"
+        ]
+      },
+      "exclude_notes": "Ignore the 'Did you know?' boxes",
+      "extraction_file": "MEX_Extraction.xlsx",
+      "coding_file": "MEX_DOK_Coding.xlsx",
+      "classified_file": "MEX_DOK_Coding_DOK_Classified.xlsx"
+    },
+    {
+      "name": "Number Journeys",
+      "code": "NJY",
+      "pdf": "Number_Journeys_Ch1-10.pdf",
+      "sections": {
+        "Question": [
+          "Exercises",
+          "Review Questions"
+        ],
+        "Investigation": [
+          "Project Corner"
+        ]
+      },
+      "exclude_notes": "",
+      "extraction_file": "",
+      "coding_file": "",
+      "classified_file": "",
+      "_note": "File names are filled in as each stage creates them."
+    }
+  ],
+  "framework": {
+    "name": "Webb's Depth of Knowledge",
+    "short": "DOK",
+    "doc": "DOK_Framework.pdf",
+    "coding_mode": "B",
+    "_coding_mode_options": "A = multi-label 0/1 (several categories per item); B = exactly one category per item",
+    "categories": [
+      "DOK 1",
+      "DOK 2",
+      "DOK 3",
+      "DOK 4"
+    ],
+    "category_groups": {
+      "Lower demand": [
+        "DOK 1",
+        "DOK 2"
+      ],
+      "Higher demand": [
+        "DOK 3",
+        "DOK 4"
+      ]
+    },
+    "_category_groups_note": "Optional. Use {} for no groups. In Path A, an item belongs to a group if any of the group's categories is 1.",
+    "level_order": [
+      "DOK 1",
+      "DOK 2",
+      "DOK 3",
+      "DOK 4"
+    ],
+    "_level_order_note": "Path B only, optional: categories from lower to higher demand. Use [] if unordered.",
+    "higher_demand_threshold": "DOK 3",
+    "extra_coding_rules": ""
+  },
+  "analysis": {
+    "comparison": {
+      "reference": "MEX",
+      "compare": [
+        "NJY"
+      ]
+    },
+    "palette": "batlow",
+    "font": "Helvetica Neue",
+    "figure_formats": [
+      "png",
+      "pdf"
+    ],
+    "dpi": 300
+  },
+  "exclusions": [],
+  "_exclusions_note": "Item_IDs excluded from all analysis; keep in sync with skill_run/exclusions.md."
+}
